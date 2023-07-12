@@ -90,7 +90,7 @@ require("lazy").setup({
       event = "VeryLazy",
       config = function()
         require("chatgpt").setup({
-          api_key_cmd = "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"
+          api_key_cmd = ""
         })
       end,
       dependencies = {
