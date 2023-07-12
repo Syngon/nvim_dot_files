@@ -12,5 +12,6 @@ require('telescope').setup {
         path_display = {'smart'},
         mappings = {i = {["<esc>"] = actions.close}}
     },
-    layout_config = {horizontal = {preview_cutoff = 100, preview_width = 0.6}}
+    layout_config = {horizontal = {preview_cutoff = 100, preview_width = 0.6}},
 }
+

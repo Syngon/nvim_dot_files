@@ -37,7 +37,8 @@ require("lazy").setup({
       })
     end
   },
-
+  
+ { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   "nvim-telescope/telescope.nvim",
   "nvim-lua/plenary.nvim",
 
