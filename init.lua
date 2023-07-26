@@ -37,8 +37,8 @@ require("lazy").setup({
       })
     end
   },
-  
- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   "nvim-telescope/telescope.nvim",
   "nvim-lua/plenary.nvim",
 
@@ -86,19 +86,33 @@ require("lazy").setup({
 
   "gbprod/yanky.nvim",
 
+
+
+
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "VeryLazy",
+    opts = {},
+    config = function(_, opts) require 'lsp_signature'.setup(opts) end
+  },
+
+
+
+
+
   {
     "jackMort/ChatGPT.nvim",
-      event = "VeryLazy",
-      config = function()
-        require("chatgpt").setup({
-          api_key_cmd = ""
-        })
-      end,
-      dependencies = {
-        "MunifTanjim/nui.nvim",
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim"
-      }
+    event = "VeryLazy",
+    config = function()
+      require("chatgpt").setup({
+        api_key_cmd = ""
+      })
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
   },
 
   {
@@ -130,7 +144,7 @@ require('base')
 require('maps')
 require('p-mason')
 require('p-null')
--- require('p-lsp')
+require('p-lsp_signature')
 -- require('p-lspsaga')
 require('p-lspzero')
 require('p-harpoon')
