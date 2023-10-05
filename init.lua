@@ -38,7 +38,22 @@ require("lazy").setup({
     end
   },
 
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "VeryLazy",
+    opts = {},
+    config = function(_, opts) require 'lsp_signature'.setup(opts) end
+  },
+
+  "mbbill/undotree",
+
+  "theprimeagen/refactoring.nvim",
+  "theprimeagen/harpoon",
+
+  {'folke/tokyonight.nvim'},
+  {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+
   "nvim-telescope/telescope.nvim",
   "nvim-lua/plenary.nvim",
 
@@ -48,14 +63,9 @@ require("lazy").setup({
   "hrsh7th/cmp-cmdline",
   "hrsh7th/nvim-cmp",
   "onsails/lspkind-nvim",
-  -- "glepnir/lspsaga.nvim",
-  "VonHeikemen/lsp-zero.nvim",
 
   "L3MON4D3/LuaSnip",
   "saadparwaiz1/cmp_luasnip",
-
-  "jose-elias-alvarez/typescript.nvim",
-  "jose-elias-alvarez/null-ls.nvim",
 
   {
     'nvim-treesitter/nvim-treesitter',
@@ -64,7 +74,6 @@ require("lazy").setup({
     },
   },
   "nvim-treesitter/nvim-treesitter-context",
-  "nvim-treesitter/playground",
   "windwp/nvim-ts-autotag",
   "p00f/nvim-ts-rainbow",
   "axelvc/template-string.nvim",
@@ -72,9 +81,6 @@ require("lazy").setup({
   "folke/todo-comments.nvim",
   "numToStr/Comment.nvim",
   "akinsho/toggleterm.nvim",
-  "mbbill/undotree",
-  "theprimeagen/refactoring.nvim",
-  "theprimeagen/harpoon",
 
   "tpope/vim-obsession",
   "dhruvasagar/vim-prosession",
@@ -85,35 +91,6 @@ require("lazy").setup({
   "nvim-tree/nvim-web-devicons",
 
   "gbprod/yanky.nvim",
-
-
-
-
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "VeryLazy",
-    opts = {},
-    config = function(_, opts) require 'lsp_signature'.setup(opts) end
-  },
-
-
-
-
-
-  {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("chatgpt").setup({
-        api_key_cmd = ""
-      })
-    end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
-  },
 
   {
     "folke/flash.nvim",
@@ -143,21 +120,17 @@ require("lazy").setup({
 require('base')
 require('maps')
 require('p-mason')
-require('p-null')
-require('p-lsp_signature')
--- require('p-lspsaga')
-require('p-lspzero')
+require('p-lsp')
 require('p-harpoon')
-require('p-undotree')
-require('p-chatgpt')
+require('p-lspzero')
 require('color')
 require('text')
 require('p-lualine')
 require('p-telescope')
 require('p-lspkind')
-require('p-cmp')
 require('p-treesitter')
 require('other')
 require('p-tree')
 require('p-yanky')
 require('p-comment')
+require('p-undotree')
