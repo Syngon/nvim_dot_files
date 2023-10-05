@@ -46,6 +46,8 @@ require("lazy").setup({
     config = function(_, opts) require 'lsp_signature'.setup(opts) end
   },
 
+  "mbbill/undotree",
+
   "theprimeagen/refactoring.nvim",
   "theprimeagen/harpoon",
 
