@@ -11,7 +11,7 @@ require("nvim-tree").setup({
     update_cwd = true
   },
   filters = {
-    custom = { '^.git$', '^node_modules$' }
+    custom = { '^.git$', '^node_modules$', 'deps$', 'build$', 'dist$', 'target$'}
   },
   git = {
     enable = false
