@@ -43,6 +43,7 @@ require('lazy').setup({
   {'nvim-tree/nvim-tree.lua'},
   {'nvim-lualine/lualine.nvim'},
   {'gbprod/yanky.nvim'},
+  {'lukas-reineke/indent-blankline.nvim'},
 
 })
 
@@ -58,3 +59,4 @@ require('p-tree')
 require('p-undotree')
 require('p-lualine')
 require('p-yanky')
+require('p-indent-blankline')
