@@ -3,9 +3,19 @@ require("mason-lspconfig").setup{
     ensure_installed = { "lua_ls", "elixirls" }
 }
 
+require("lsp-format").setup {}
 local lspconfig = require('lspconfig')
+local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-lspconfig.elixirls.setup {}
+
+lspconfig.elixirls.setup {
+  on_attach = require("lsp-format").on_attach,
+  capabilities = lsp_capabilities,
+}
+
+lspconfig.lua_ls.setup({
+  capabilities = lsp_capabilities,
+})
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
